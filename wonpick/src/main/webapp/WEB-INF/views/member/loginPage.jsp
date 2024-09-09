@@ -97,7 +97,6 @@ a:hover {
 <body>
 	<%
 	String alertMsg = (String) session.getAttribute("alertMsg");
-	String joinMsg = (String) session.getAttribute("joinMsg");
 	%>
 	<%
 	if (alertMsg != null) {
@@ -111,18 +110,7 @@ a:hover {
 	<%
 	}
 	%>
-	<%
-	if (joinMsg != null) {
-	%>
-	<script>
-			alert("<%=joinMsg%>");
-	</script>
-	<%
-	session.removeAttribute("joinMsg");
-	%>
-	<%
-	}
-	%>
+
 	<form action="<%= request.getContextPath() %>/member/login" method="post">
 		<div class="wrap">
 			<div id="header">
@@ -140,8 +128,8 @@ a:hover {
 
 			</div>
 			<div id="findUser">
-				<a href="/wonPick/findId.me">아이디</a> / <a
-					href="/wonPick/findPassword.me">비밀번호 찾기</a>
+				<a href="member/findIdForm">아이디</a> / <a
+					href="member/changePwdUserForm">비밀번호 찾기</a>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="<%= request.getContextPath() %>/member/join">회원가입</a>
 			</div>
 			<div id="footer">&copy; W.O.N Corp.</div>

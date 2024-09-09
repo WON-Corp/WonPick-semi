@@ -103,5 +103,56 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
+	@RequestMapping("/findIdForm")
+	public String findIdForm() {
+		return "member/findId";
+	}
+	
+	@RequestMapping("/findId")
+	public String findId(Member m, HttpSession session) {
+		
+		String userId = mService.findId(m);
+		
+		 if (userId != null) {
+			 session.setAttribute("userId", userId);
+	         return "member/findIdResult";
+	     } else {
+	         return "member/findIdResult";
+	     }
+	}
+	
+	@RequestMapping("/changePwdUserForm")
+	public String changePwdUserForm() {
+		return "member/changePasswordUser";
+	}
+	
+	@RequestMapping("/changePwdForm")
+	public String changePwdForm(Member m, HttpSession session, Model model) {
+		
+		int result = mService.changePwdUser(m);
+		if (result > 0) {
+			model.addAttribute("userId", m.getUserId());
+	         return "member/changePassword";
+	     } else {	
+	    	 session.setAttribute("alertMsg", "회원정보가 일치하지 않습니다.");
+	         return "member/changePasswordUser";
+	     }
+	}
+	
+	@RequestMapping("/changePassword")
+	public String changePassword(Member m, HttpSession session) {
+		
+		m.setPassword(bCrypt.encode(m.getPassword()));
+		
+		int result = mService.changePassword(m);
+		
+		if (result > 0) {
+			session.setAttribute("result", "비밀번호 변경에 성공하였습니다.");
+	         return "member/changePasswordResult";
+	     } else {	
+	    	 session.setAttribute("result", "비밀번호 변경에 실패하였습니다.");
+	         return "member/changePasswordResult";
+	     }
+	}
 
 }

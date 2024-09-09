@@ -18,4 +18,10 @@ public interface MemberService {
 	
 	/* 회원 탈퇴 */
 	int deleteMember(String id, String pwd);
+
+	String findId(Member m);
+
+	int changePwdUser(Member m);
+
+	int changePassword(Member m);
 }

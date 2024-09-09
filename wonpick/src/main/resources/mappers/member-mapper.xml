@@ -25,14 +25,27 @@
 				AND STATUS IN('Y','A')
 	</select>
 	
-	<select id="insertMember" resultMap="memberResultMap">
+	<insert id="insertMember">
 		INSERT INTO MEMBER VALUES 
 		(#{userId}, #{password}, #{userName}, #{nickName}, #{email}, #{phone}, #{gender}, #{birth}, #{address}, null,null,'Y')
-	</select>
+	</insert>
 	
 	<select id="idCheck" resultType="_int">
     	SELECT COUNT(*) FROM MEMBER WHERE USER_ID = #{userId} AND STATUS IN('Y','A')
   	</select>
+  	
+  	<select id="findId" resultType="String">
+    	SELECT USER_ID FROM MEMBER WHERE USER_NAME = #{userName} AND EMAIL = #{email} AND STATUS IN('Y','A')
+  	</select>
+  	
+  	<select id="changePwdUser" resultType="_int">
+    	SELECT COUNT(*) FROM MEMBER WHERE USER_ID = #{userId} AND USER_NAME = #{userName} AND EMAIL = #{email} AND STATUS IN('Y','A')
+  	</select>
+  	
+  	<update id="changePassword">
+  		UPDATE MEMBER SET PASSWORD = #{password} WHERE USER_ID = #{userId} AND STATUS IN('Y','A')
+  	</update>
+  	
 		
   
 </mapper>

@@ -19,4 +19,16 @@ public class MemberDao {
 	public int idCheck(SqlSessionTemplate sqlSession, String id) {
 		return sqlSession.selectOne("memberMapper.idCheck", id);
 	}
+
+	public String findId(SqlSessionTemplate sqlSession, Member m) {
+		return sqlSession.selectOne("memberMapper.findId", m);
+	}
+
+	public int changePwdUser(SqlSessionTemplate sqlSession, Member m) {
+		return sqlSession.selectOne("memberMapper.changePwdUser", m);
+	}
+
+	public int changePassword(SqlSessionTemplate sqlSession, Member m) {
+		return sqlSession.update("memberMapper.changePassword", m);
+	}
 }
