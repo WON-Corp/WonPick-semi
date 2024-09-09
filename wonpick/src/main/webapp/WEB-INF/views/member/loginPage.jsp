@@ -126,7 +126,7 @@ a:hover {
 	<form action="<%= request.getContextPath() %>/member/login" method="post">
 		<div class="wrap">
 			<div id="header">
-				<img src="../resources/logo.jpg" alt=""
+				<img src="#" alt=""
 					style="border-radius: 15px;"> <br>
 				<h1>
 					<em>WonPick</em>

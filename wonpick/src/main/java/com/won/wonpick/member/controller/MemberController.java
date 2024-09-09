@@ -63,8 +63,6 @@ public class MemberController {
 	public String insertMember(Member m, HttpSession session) {
 		
 		
-		System.out.println(bCrypt.encode("1234"));
-		// 비밀번호 암호화
 		m.setPassword(bCrypt.encode(m.getPassword()));
 		
 		int result = mService.insertMember(m);
@@ -97,7 +95,13 @@ public class MemberController {
 				e.printStackTrace();
 			}
 		}
-		
 	}
+	
+	@RequestMapping("/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:/";
+	}
+	
 
 }

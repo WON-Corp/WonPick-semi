@@ -574,7 +574,7 @@
             <li class="list">
                 <a href="Main.html">
                     <div class="logo-container">
-                        <img src="resources/logo.jpg" alt="WonPick 로고" class="logo">
+                        <img src="#" alt="WonPick 로고" class="logo">
                         <p class="logo-text">WonPick</p>
                     </div>
                 </a>
@@ -663,7 +663,7 @@
           <div class="modal-content">
            <!-- 모달 헤더 부분 -->
             <div class="modal-header">
-              <img src="resources/logo.jpg" alt="" style="border-radius: 15px; width: 45px;">
+              <img src="#" alt="" style="border-radius: 15px; width: 45px;">
               <h2 class="modal-title fs-5" id="errorPostModalLabel">&nbsp;문제신고</h2>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
             </div>
@@ -690,7 +690,7 @@
           <div class="modal-content">
            <!-- 모달 헤더 부분 -->
             <div class="modal-header">
-              <img src="../resources/logo.jpg" alt="" style="border-radius: 15px; width: 45px;">
+              <img src="#" alt="" style="border-radius: 15px; width: 45px;">
               <h2 class="modal-title fs-5" id="errorPostListModalLabel">&nbsp;문제신고목록</h2>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
             </div>
@@ -758,35 +758,35 @@
             <!-- 프로필 스토리 섹션 -->
             <div class="stories">
                 <div class="story">
-                    <img src="resources/profile01.png" onerror="src='resources/logo.jpg'">
+                    <img src="#" onerror="src='#'">
                     <span>아이유</span>
                 </div>
                 <div class="story">
-                    <img src="resources/profile02.jpg" onerror="src='resources/logo.jpg'">
+                    <img src="#" onerror="src='#'">
                     <span>username2</span>
                 </div>
                 <div class="story">
-                    <img src="resources/profile03.jpg" onerror="src='resources/logo.jpg'">
+                    <img src="#" onerror="src='#'">
                     <span>username3</span>
                 </div>
                 <div class="story">
-                    <img src="resources/profile04.jpg" onerror="src='resources/logo.jpg'">
+                    <img src="#" onerror="src='#'">
                     <span>username4</span>
                 </div>
                 <div class="story">
-                    <img src="resources/profile05.jpg" onerror="src='resources/logo.jpg'">
+                    <img src="#" onerror="src='#'">
                     <span>username5</span>
                 </div>
                 <div class="story">
-                    <img src="resources/profile06.jpg" onerror="src='resources/logo.jpg'">
+                    <img src="#" onerror="src='#'">
                     <span>username6</span>
                 </div>
                 <div class="story">
-                    <img src="resources/profile06.jpg" onerror="src='resources/logo.jpg'">
+                    <img src="#" onerror="src='#'">
                     <span>username7</span>
                 </div>
                 <div class="story">
-                    <img src="resources/profile06.jpg" onerror="src='resources/logo.jpg'">
+                    <img src="#" onerror="src='#'">
                     <span>username8</span>
                 </div>
                 <!-- 필요에 따라 더 많은 프로필 추가 !! -->
@@ -803,7 +803,7 @@
                     </div>
                     <ion-icon name="ellipsis-horizontal-outline" class="post-options"></ion-icon>
                 </div>
-                <img src="resources/feed01.jpg" alt="게시물 이미지" class="post-image">
+                <img src="#" alt="게시물 이미지" class="post-image">
                 <div class="post-content">
                     <div class="post-actions">
                         <ion-icon name="heart-outline"></ion-icon>
@@ -827,13 +827,13 @@
     <div class="myprofile">
         <h4>내 프로필</h4>
         <div class="myprofile2">
-        <img src="src='resources/logo.jpg" onerror="src='resources/logo.jpg'">
+        <img src="#" onerror="src='#'">
         <span class="myname">${ loginUser.nickName }</span>
         </div>
     </div>
     <script>
         function userLogout() {
-            location.href = "/wonPick/logout.me";
+            location.href = "member/logout";
         }
     </script>
 
@@ -842,7 +842,7 @@
         <h3>메시지</h3>
         <ul class="message-list">
             <li>
-                <img src="resources/profile01.png" onerror="src='resources/logo.jpg'">
+                <img src="#" onerror="src='#'">
                 <div class="message-info">
                     <span class="name">이지은</span>
                     <span class="message-text">얏호</span>
@@ -850,7 +850,7 @@
                 </div>
             </li>
             <li>
-                <img src="resources/profile02.jpg" onerror="src='resources/logo.jpg'">
+                <img src="#" onerror="src='#'">
                 <div class="message-info">
                     <span class="name">유지민</span>
                     <span class="message-text">저녁 뭐먹지?</span>
@@ -858,7 +858,7 @@
                 </div>
             </li>
             <li>
-                <img src="resources/profile03.jpg" onerror="src='resources/logo.jpg'">
+                <img src="#" onerror="src='#'">
                 <div class="message-info">
                     <span class="name">김민정</span>
                     <span class="message-text">3분 전에 활동</span>
@@ -874,7 +874,7 @@
                 $(function(){
                     // 비동기식 통신
                     $.ajax({
-                        url: '/wonPick/errorPostList.do',
+                        url: '/wonpick/errorPostList.do',
                         type: 'post', // 기본값
                         data: { data: data }, 
                         success: function(result) {
