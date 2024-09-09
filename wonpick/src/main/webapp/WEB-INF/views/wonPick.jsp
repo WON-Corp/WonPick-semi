@@ -574,7 +574,7 @@
             <li class="list">
                 <a href="Main.html">
                     <div class="logo-container">
-                        <img src="#" alt="WonPick 로고" class="logo">
+                        <img src="resources/img/logo.jpg" alt="WonPick 로고" class="logo">
                         <p class="logo-text">WonPick</p>
                     </div>
                 </a>
@@ -758,35 +758,35 @@
             <!-- 프로필 스토리 섹션 -->
             <div class="stories">
                 <div class="story">
-                    <img src="#" onerror="src='#'">
+                    <img src="resources/img/profile01.png" onerror="src='resources/img/logo.jpg'">
                     <span>아이유</span>
                 </div>
                 <div class="story">
-                    <img src="#" onerror="src='#'">
+                    <img src="resources/img/profile02.jpg" onerror="src='resources/img/logo.jpg'">
                     <span>username2</span>
                 </div>
                 <div class="story">
-                    <img src="#" onerror="src='#'">
+                    <img src="resources/img/profile03.jpg" onerror="src='resources/img/logo.jpg'">
                     <span>username3</span>
                 </div>
                 <div class="story">
-                    <img src="#" onerror="src='#'">
+                    <img src="resources/img/profile04.jpg" onerror="src='resources/img/logo.jpg'">
                     <span>username4</span>
                 </div>
                 <div class="story">
-                    <img src="#" onerror="src='#'">
+                    <img src="resources/img/profile05.jpg" onerror="src='resources/img/logo.jpg'">
                     <span>username5</span>
                 </div>
                 <div class="story">
-                    <img src="#" onerror="src='#'">
+                    <img src="resources/img/profile06.jpg" onerror="src='resources/img/logo.jpg'">
                     <span>username6</span>
                 </div>
                 <div class="story">
-                    <img src="#" onerror="src='#'">
+                    <img src="resources/img/profile07.jpg" onerror="src='resources/img/logo.jpg'">
                     <span>username7</span>
                 </div>
                 <div class="story">
-                    <img src="#" onerror="src='#'">
+                    <img src="resources/img/profile08.jpg" onerror="src='resources/img/logo.jpg'">
                     <span>username8</span>
                 </div>
                 <!-- 필요에 따라 더 많은 프로필 추가 !! -->
@@ -803,7 +803,7 @@
                     </div>
                     <ion-icon name="ellipsis-horizontal-outline" class="post-options"></ion-icon>
                 </div>
-                <img src="#" alt="게시물 이미지" class="post-image">
+                <img src="resources/img/feed01.jpg" alt="게시물 이미지" class="post-image">
                 <div class="post-content">
                     <div class="post-actions">
                         <ion-icon name="heart-outline"></ion-icon>
@@ -827,7 +827,7 @@
     <div class="myprofile">
         <h4>내 프로필</h4>
         <div class="myprofile2">
-        <img src="#" onerror="src='#'">
+        <img src="resources/img/logo.jpg" onerror="src='resources/img/logo.jpg'">
         <span class="myname">${ loginUser.nickName }</span>
         </div>
     </div>
@@ -842,7 +842,7 @@
         <h3>메시지</h3>
         <ul class="message-list">
             <li>
-                <img src="#" onerror="src='#'">
+                <img src="resources/img/profile01.png" onerror="src='resources/img/logo.jpg'">
                 <div class="message-info">
                     <span class="name">이지은</span>
                     <span class="message-text">얏호</span>
@@ -850,7 +850,7 @@
                 </div>
             </li>
             <li>
-                <img src="#" onerror="src='#'">
+                <img src="resources/img/profile02.jpg" onerror="src='resources/img/logo.jpg'">
                 <div class="message-info">
                     <span class="name">유지민</span>
                     <span class="message-text">저녁 뭐먹지?</span>
@@ -858,7 +858,7 @@
                 </div>
             </li>
             <li>
-                <img src="#" onerror="src='#'">
+                <img src="resources/img/profile03.jpg" onerror="src='resources/img/logo.jpg'">
                 <div class="message-info">
                     <span class="name">김민정</span>
                     <span class="message-text">3분 전에 활동</span>
