@@ -272,7 +272,7 @@
                             <select name="yy" id="year"></select> 년
                             <select name="mm" id="month"></select> 월
                             <select name="dd" id="day"></select> 일
-                            <input type="hidden" name="birth">
+                            <input type="hidden" name="birth" id="birth">
                         </div>
                     </div>
                 </div>
@@ -542,6 +542,9 @@
             const userId = document.getElementById("userId");
             const userIdForm = /^(?=.*[a-zA-Z])((?=.*\d)|(?=.*\W)).{6,20}$/;
             
+            $("#birth").val($("#year").val()+"-"+$("#month").val()+"-"+$("#day").val());
+            console.log($("#birth").val());
+
             if(!userIdForm.test(userId.value) || $("#checkId").attr("disabled") != 'disabled') {
                 alert("아이디 중복확인을 해야합니다.");
                 return false;
@@ -608,7 +611,8 @@
                 return false;
             }
 
-            $("#birth").val($("#yy").val()+"-"+$("#mm").val()+"-"+$("#dd").val());
+            
+            
         }
     </script>
 </body>

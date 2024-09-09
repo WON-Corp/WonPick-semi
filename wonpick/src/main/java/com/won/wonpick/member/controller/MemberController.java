@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,18 +19,20 @@ import com.won.wonpick.member.service.MemberService;
 public class MemberController {
 	
 	private final MemberService mService;
+	private final BCryptPasswordEncoder bCrypt;
 	
 	// 생성자 주입 방식으로 의존성 주입
 	@Autowired
-	public MemberController(MemberService mService) {
+	public MemberController(MemberService mService, BCryptPasswordEncoder bCrypt) {
 		this.mService = mService;
+		this.bCrypt = bCrypt;
 	}
 	
 	@RequestMapping("/login")
 	 public String loginMember(Member m, Model model, HttpSession session) {
 		Member loginUser = mService.loginMember(m);
 		
-		if (loginUser != null) {	// 로그인 성공
+		if (loginUser != null && bCrypt.matches(m.getPassword(), loginUser.getPassword())) {	// 로그인 성공
 
 			session.setAttribute("loginUser", loginUser);
 
@@ -58,9 +61,12 @@ public class MemberController {
 	 */
 	@RequestMapping("/insertMember")
 	public String insertMember(Member m, HttpSession session) {
-		System.out.println(m.getUserId()); //-----------------------------------왜 null값인가 도저히 알수가 없네
-		System.out.println(m.getPassword());
-		System.out.println(m.getUserName());
+		
+		
+		System.out.println(bCrypt.encode("1234"));
+		// 비밀번호 암호화
+		m.setPassword(bCrypt.encode(m.getPassword()));
+		
 		int result = mService.insertMember(m);
 		
 		if (result > 0) {

@@ -22,13 +22,12 @@
 	<select id="loginMember" resultMap="memberResultMap">
 		SELECT * FROM MEMBER
 		WHERE USER_ID = #{userId}
-				AND PASSWORD = #{password}
 				AND STATUS IN('Y','A')
 	</select>
 	
 	<select id="insertMember" resultMap="memberResultMap">
 		INSERT INTO MEMBER VALUES 
-		(#{userId}, #{password}, #{userName}, #{nickName}, #{email}, #{phone}, #{gender}, '00-01-01', #{address}, null,null,'Y')
+		(#{userId}, #{password}, #{userName}, #{nickName}, #{email}, #{phone}, #{gender}, #{birth}, #{address}, null,null,'Y')
 	</select>
 	
 	<select id="idCheck" resultType="_int">
